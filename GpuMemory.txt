@@ -1,0 +1,11 @@
+	int totalMem = 0;
+	glGetIntegerv(GL_GPU_MEMORY_INFO_TOTAL_AVAILABLE_MEMORY_NVX, &totalMem);
+
+	int freeMem = 0;
+	glGetIntegerv(GL_GPU_MEMORY_INFO_CURRENT_AVAILABLE_VIDMEM_NVX, &freeMem);
+
+	freeMem /= 1024.0;
+	totalMem /= 1024.0;
+
+	char buff[128];
+	sprintf(buff, "Avail Gpu Memory : %d / %d MB", freeMem, totalMem);
